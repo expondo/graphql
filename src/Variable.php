@@ -81,7 +81,7 @@ class Variable
             ($this->getType()) .
             ($this->getDefault() ?
                 ' = ' .
-                ($this->getType() === 'String' ? json_encode($this->getDefault()) : $this->getDefault())
+                ($this->getType() === 'String' ? json_encode($this->getDefault(), JSON_UNESCAPED_UNICODE) : $this->getDefault())
                 : '');
     }
 
