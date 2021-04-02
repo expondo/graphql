@@ -18,8 +18,8 @@ class Mutation extends Node
     /**
      * Mutation constructor.
      *
-     * @param null $mutation
-     * @param null $properties
+     * @param null|string $mutation
+     * @param null|array<mixed> $properties
      */
     public function __construct($mutation, $properties)
     {
