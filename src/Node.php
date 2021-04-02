@@ -147,8 +147,8 @@ class Node
     /**
      * Node constructor.
      *
-     * @param null $name
-     * @param null $properties
+     * @param null|string $name
+     * @param null|array<mixed> $properties
      */
     public function __construct($name = null, $properties = null)
     {
@@ -327,6 +327,8 @@ class Node
         }
 
         $ql .= implode($glue, array_merge($props, $mods));
+
+        if (trim($ql) == '{') return '';
 
         return $ql . str_repeat(' ', ($index * $tab) - $tab) . "}" . $crl;
     }
